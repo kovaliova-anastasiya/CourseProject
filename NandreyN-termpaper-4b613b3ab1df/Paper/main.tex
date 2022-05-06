@@ -1,0 +1,138 @@
+% LaTeX template for term papers and graduate works
+
+\documentclass[14pt, a4paper]{extarticle}
+\usepackage[utf8]{inputenc}
+
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{setspace}
+
+
+\usepackage{amssymb,amsfonts,amsmath,cite,enumerate,float,indentfirst}
+\usepackage{mathrsfs}
+\usepackage{comment}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{mathtools}
+\usepackage[pdftex]{graphicx}
+\usepackage{soul} 
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{gensymb}
+% package for graph drawing
+\usepackage{tikz}
+\usepackage{enumitem}
+% for custom captions
+\usepackage{caption}
+\usepackage{tabularx}
+\DeclareCaptionLabelSeparator{dash}{---}
+%\captionsetup{labelsep=dash}
+% setting equation number
+%\renewcommand\theequation{\arabic{section}.\arabic{equation}}
+
+% for BDSM with table of contents
+%\usepackage{tocloft}
+
+% also russian spacing
+\frenchspacing
+
+\mathtoolsset{showonlyrefs=true} %equation number only for referenced
+
+% smart tables
+\usepackage{tabularx}
+\usepackage{tabulary}
+
+% smart ',' in math mode
+%\usepackage{icomma}
+\usepackage{listings}
+\usepackage{slashbox}
+
+% use to copy math sign to next line
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}
+	{\hbox{$\mathsurround=0pt #1$}}{}}
+
+%redefining english style math symbols to russian style
+\renewcommand{\epsilon}{\ensuremath{\varepsilon}}
+\renewcommand{\phi}{\ensuremath{\varphi}}
+\renewcommand{\kappa}{\ensuremath{\varkappa}}
+\renewcommand{\le}{\ensuremath{\leqslant}}
+\renewcommand{\leq}{\ensuremath{\leqslant}}
+\renewcommand{\ge}{\ensuremath{\geqslant}}
+\renewcommand{\geq}{\ensuremath{\geqslant}}
+\renewcommand{\emptyset}{\varnothing}
+% setting path to image folder
+\graphicspath{{img/}}
+
+
+% problem pasting command
+% using style from Garey & Johnson
+\newcounter{problem}[section]
+\newcommand{\pasteproblem}[3]{
+	\addtocounter{problem}{1}
+	\noindent \textbf{\textsc{#1}} \\
+	\noindent УСЛОВИЕ. #2\\
+	\noindent ВОПРОС. #3\\
+}
+
+ % set page margins
+\usepackage{geometry}
+\geometry{left=2.5cm}
+\geometry{right=1cm}
+\geometry{top=2cm}
+\geometry{bottom=2cm}
+
+% set line space
+\renewcommand{\baselinestretch}{1}
+\setlength{\parskip}{0.8em}
+\setlength{\parindent}{1.5em}
+
+% set titles style
+\usepackage{titlesec}
+\titleformat{\section}[block]{\large\bfseries\center\onehalfspacing}{Глава \arabic{section}. }{2pt}{}
+\titleformat{\subsection}[block]{\large\bfseries\center}{\arabic{section}.\arabic{subsection} }{2pt}{}
+\titleformat*{\subsubsection}{\bfseries\center}
+
+% figure captions settings
+\renewcommand\thefigure{\thesubsection.\arabic{figure}}  
+\makeatletter
+\renewcommand{\fnum@figure}{Рисунок \thefigure}
+\makeatother
+
+% table captions settings
+\renewcommand\thetable{\arabic{table}}  
+\makeatletter
+\renewcommand{\fnum@table}{Таблица \thetable}
+\makeatother
+
+
+% set theorems title style
+\usepackage{amsthm}
+
+% content title changing
+\addto\captionsrussian{
+  \renewcommand{\contentsname}
+    {ОГЛАВЛЕНИЕ}
+}
+
+% bibliography title changing
+\addto\captionsrussian{
+  \renewcommand{\refname}
+    {СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}
+}
+
+\usepackage{tempora}
+\begin{document}
+	\input{titlepages/term_paper}
+	\input{other/contents}
+	\setcounter{page}{2}
+	\setcounter{table}{1}
+	\input{abstracts/rus}
+	\input{abstracts/bel}
+	\input{abstracts/eng}
+	\input{other/introduction}
+	\input{chapters/1_processes}
+	\input{chapters/2_some_systems}
+	\input{chapters/3_practice}
+	\input{other/conclusion}
+	\input{other/bibliography}
+\end{document}

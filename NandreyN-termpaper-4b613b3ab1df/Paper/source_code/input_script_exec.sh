@@ -1,0 +1,1 @@
+python3 input_generator.py --count N --length M OutputPath

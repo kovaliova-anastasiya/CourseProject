@@ -1,0 +1,40 @@
+\newpage
+\section[Система управления процессами.]{Система управления процессами.}
+
+Данная глава рассматривает основные характеристики процессов, а также некоторые стратегии планирования выполнения процессов в однопроцессорной среде.
+
+\subsection{Общая информация о процессах.}
+\subsubsection{Состояния процессов.}
+\input{sections/chapter1/1_process_states}
+
+\subsubsection{Контекст процесса.}
+\input{sections/chapter1/1_process_context}
+
+\subsubsection{Обработка прерываний таймера.}
+\input{sections/chapter1/1_process_system_interruption}
+\subsection{Введение в систему планирования.}
+\subsubsection{Необходимость в системе планирования процессов.}
+\input{sections/chapter1/1_planning_purpose}
+\subsubsection{Классификация сред выполнения.}
+\input{sections/chapter1/1_systems_classification}
+\subsection{Планирование в системах реального времени.}
+\input{sections/chapter1/1_rt_systems_scheduling}
+\subsubsection{EDF подход к планированию.}
+\input{sections/chapter1/1_rt_edf}
+
+\subsection{Планирование в пакетных системах.}
+\subsubsection{Первый пришел - первый обслужен. (FIFO)}
+\input{sections/chapter1/1_package_sys_fifo}
+\subsubsection{Сначала самое короткое задание. (SJF)}
+\input{sections/chapter1/1_package_sys_sjf}
+
+\subsection{Планирование в интерактивных системах.}
+\subsubsection{Циклическая схема.}
+\input{sections/chapter1/1_int_systems_cyclical}
+\subsubsection{Следующим самое короткое задание. (SJN)}
+\input{sections/chapter1/1_int_systems_sjn}
+
+\subsubsection{Справедливое планирование.}
+\input{sections/chapter1/1_int_systems_fair}
+\subsubsection{Приоритетные алгоритмы планирования.}
+\input{sections/chapter1/1_int_systems_priority}

@@ -1,0 +1,7 @@
+Запуск нового процесса происходит с помощью системного вызова $CreateProcess$ (Листинг \ref{lst:win_create_process}).
+
+\lstinputlisting[caption=Запуск процессов, captionpos=b,label={lst:win_create_process}]{source_code/win_distributor.cpp}
+Системный вызов возвращает handle процесса, который записывается в массив и хранится для ожидания завершения каждого дочернего процесса с последующим закрытием их дескрипторов (Листинг \ref{lst:win_wait}).
+\lstinputlisting[caption=Ожидание и закрытие дескрипторов процессов, captionpos=b, label={lst:win_wait}]{source_code/win_wait.cpp}
+
+Здесь $proc\_info$ - массив, в котором хранятся handle процессов.
